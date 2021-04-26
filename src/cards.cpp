@@ -114,3 +114,57 @@ bool lessCard(Card *op1, Card *op2)
 	return (op1->getValue() < op2->getValue());
 }
 
+std::ostream &operator<<(std::ostream &s, Card &c)
+{
+	if (c.getState() == Card::SHIRT){
+		s << "**|";
+		return s;
+	}
+	else {
+		switch (c.getValue()) {
+			case Card::TWO:
+			case Card::THREE:
+			case Card::FOUR:
+			case Card::FIVE:
+			case Card::SIX:
+			case Card::SEVEN:
+			case Card::EIGHT:
+			case Card::NINE:
+			case Card::TEN:
+				s << c.getValue();
+				break;
+			case Card::JACK:	
+				s << "J";
+				break;
+			case Card::QUEEN:	
+				s << "Q";
+				break;
+			case Card::KING:	
+				s << "K";
+				break;
+			case Card::ACE:	
+				break;
+			default:
+				s << "**";
+		}
+		switch (c.getSuit()) {
+			/* Выводим изображение мастей, используя
+			utf-8 коды этих изображений */
+			case Card::SPADES:
+				s << "\u2660";
+				break;
+			case Card::HEARTS:
+				s << "\u2665";
+				break;
+			case Card::CLUBS:
+				s << "\u2663";
+				break;
+			case Card::DIAMONDS:
+				s << "\u2666";
+				break;
+		}
+		s << "|";
+		return s;
+	}
+}
+

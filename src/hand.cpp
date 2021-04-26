@@ -52,7 +52,8 @@ void Hand::display()
 	if (cards.empty())
 		std::cout << "Hand is empty";
 	for (auto c : cards){
-		c->display();
+		//c->display();
+		std::cout << *(c);
 	}
 	std::cout << std::endl;
 }

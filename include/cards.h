@@ -33,6 +33,7 @@ class Card
 		void open() {m_state = PICTURE;}
 		void display();
 		bool operator==(Card &op);
+		friend std::ostream &operator<<(std::ostream &s, Card &c);
 	private:
 		suits_t m_suit;
 		cardsvalue_t m_value;
