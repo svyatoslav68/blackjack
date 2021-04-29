@@ -117,11 +117,11 @@ bool lessCard(Card *op1, Card *op2)
 std::ostream &operator<<(std::ostream &s, Card &c)
 {
 	if (c.getState() == Card::SHIRT){
-		s << "**|";
+		s << "**\t";
 		return s;
 	}
 	else {
-		switch (c.getValue()) {
+		switch (c.getValueCard()) {
 			case Card::TWO:
 			case Card::THREE:
 			case Card::FOUR:
@@ -163,7 +163,7 @@ std::ostream &operator<<(std::ostream &s, Card &c)
 				s << "\u2666";
 				break;
 		}
-		s << "|";
+		s << "\t";
 		return s;
 	}
 }

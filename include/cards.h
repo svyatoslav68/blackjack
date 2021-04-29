@@ -28,6 +28,7 @@ class Card
 		Card(suits_t suit, cardsvalue_t value);
 		suits_t getSuit() {return m_suit;}
 		unsigned int getValue();
+		cardsvalue_t getValueCard() {return m_value;}
 		states_t getState();
 		bool flip();
 		void open() {m_state = PICTURE;}
